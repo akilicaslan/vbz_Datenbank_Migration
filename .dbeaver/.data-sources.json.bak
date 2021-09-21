@@ -1,0 +1,37 @@
+{
+	"folders": {},
+	"connections": {
+		"csvjdbc-17c034261e6-27d9a69ce3fc287c": {
+			"provider": "generic",
+			"driver": "csvjdbc",
+			"name": "git-edu",
+			"save-password": true,
+			"read-only": false,
+			"virtual-model-id": "csvjdbc-17bf3e97a21-47486235efe0ba3f",
+			"configuration": {
+				"database": "/Users/azmi/Documents/GitHub/git-edu",
+				"url": "jdbc:relique:csv:/Users/azmi/Documents/GitHub/git-edu",
+				"type": "dev",
+				"properties": {
+					"quotechar": "\"",
+					"charset": "UTF-8",
+					"separator": ",",
+					"fileExtension": ".csv",
+					"suppressHeaders": "false"
+				},
+				"auth-model": "native"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}
