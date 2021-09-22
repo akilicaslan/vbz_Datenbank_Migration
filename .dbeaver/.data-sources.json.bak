@@ -21,6 +21,26 @@
 				},
 				"auth-model": "native"
 			}
+		},
+		"mysql8-17c03426ba4-59aae36429a555fa": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "localhost",
+			"save-password": true,
+			"read-only": false,
+			"virtual-model-id": "mysql8-17bf3eaec44-162b43eb5ad4e511",
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"url": "jdbc:mysql://localhost:3306/",
+				"home": "/usr/local/mysql-8.0.26-macos11-x86_64",
+				"type": "dev",
+				"properties": {
+					"connectTimeout": "20000",
+					"allowPublicKeyRetrieval": "TRUE"
+				},
+				"auth-model": "native"
+			}
 		}
 	},
 	"connection-types": {
