@@ -7,6 +7,14 @@ Aufgabe 6: Bereinigung der Tabellen und Constraints
 
 Bei der Bereinigung der Tabellen geht es um das Hinzufügen von Primärschlüsseln und die Verwendung der korrekten Datentypen (zum Beispiel für Date).
 
+Link:
+
+![ERD](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Bilder/Aufgabe6.bmp)
+
+Schritt 4:
+
+![ERD](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Bilder/Aufgabe6.bmp)
+
 
 **Aufgabe7**
 Aufgabe 7: Erstellen Sie eine Abfrage über Zeitdifferenzen
