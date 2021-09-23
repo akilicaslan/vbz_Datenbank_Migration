@@ -19,4 +19,21 @@ INNER JOIN haltestelle hs ON hs.halt_id = fsi.halt_id_von
 WHERE fsi.linie = 2
 ORDER BY delay DESC;
 
+CREATE VIEW abfrage AS
+SELECT
+fsi.id,
+hp.halt_punkt_id,
+hs.halt_lang,
+hp.gps_latitude,
+hp.gps_longitude,
+fsi.linie,
+fsi.datumzeit_ist_an_von AS datumzeit_ist_an,
+fsi.datumzeit_soll_an_von AS datumzeit_soll_an,
+TIMESTAMPDIFF(SECOND, fsi.datumzeit_soll_an_von,fsi.datumzeit_ist_an_von) AS delay
+
+
+
+
+
+
 
