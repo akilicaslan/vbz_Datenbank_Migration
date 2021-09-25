@@ -27,7 +27,7 @@ TIMESTAMPDIFF (SECOND, datumzeit_soll_ab_von, datumzeit_ist_ab_von) as timediff_
 TIMESTAMPDIFF (SECOND, datumzeit_soll_an_von, datumzeit_soll_ab_von) as halt_soll_time_seconds, 
 TIMESTAMPDIFF (SECOND, datumzeit_ist_an_von, datumzeit_ist_ab_von) as halt_ist_time_seconds
 FROM
-fahrzeiten_soll_ist fsi
+fahrzeiten_soll_ist fsi 
 LIMIT 40000;
 
 WHERE fsi.linie = 2 AND date(fsi.betriebs_datum) = '2018-12-30' AND fsi.fw_lang = "KLUS - ALBR";
