@@ -21,6 +21,10 @@ Aufgabe 7: Erstellen Sie eine Abfrage über Zeitdifferenzen
 
 Erstellen Sie eine Abfrage, welche die Zeitdifferenzen anzeigt. Für die Zeitdifferenzen sollen nur die von-Zeiten betrachtet werden.
 
+Link:
+
+[SQL Script Aufgabe 7](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe7.sql)
+
 **Aufgabe8**
 Aufgabe a: Linien-Abfrage
 Die Abfrage soll fahrweg_id, linie, richtung, Fahrwegnummer (fw_no) und die Fahrwegbezeichnung (fw_lang) enthalten.
@@ -31,6 +35,10 @@ Erstellen Sie aus der Abfrage eine View query_line
 
 Aufgabe c: Erstellen einer neuen Tabelle Linie mit Hilfe einer Abfrage
 Erstellen Sie ein Skript mit einer Tabellenerstellungsabfrage create_line_table. Lesen Sie dazu die Hilfe:
+
+Link:
+
+[SQL Script Aufgabe 7](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe8.sql)
 
 
 **Aufgabe9**
@@ -44,9 +52,12 @@ A)
 B)
 
 
+
 **Aufgabe10**
 Aufgabe 10: Verspätungsliste pro Linie
 Ermitteln Sie für eine Line (zum Beispiel Linie 9) eine Liste mit den 20 grössten Verspätungen. Die Liste (Abfrage) soll folgende Angaben enthalten:
+
+
 
 
 **Aufgabe11**
