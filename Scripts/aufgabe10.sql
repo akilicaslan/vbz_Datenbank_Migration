@@ -1,3 +1,4 @@
+CREATE VIEW abfrage1 AS
 SELECT
 
 fsi.id,
@@ -19,7 +20,7 @@ INNER JOIN haltestelle hs ON hs.halt_id = fsi.halt_id_von
 WHERE fsi.linie = 2
 ORDER BY delay DESC;
 
-CREATE VIEW abfrage AS
+CREATE VIEW abfrage2 AS
 SELECT
 fsi.id,
 hp.halt_punkt_id,
