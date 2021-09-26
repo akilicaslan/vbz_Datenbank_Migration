@@ -3,17 +3,17 @@ Analyse der Fahrzeiten 2020 der VBZ im SOLL-IST-Vergleich
 
 
 **Aufgabe6**
-Aufgabe 6: Bereinigung der Tabellen und Constraints
+Bereinigung der Tabellen und Constraints
 
 Bei der Bereinigung der Tabellen geht es um das Hinzufügen von Primärschlüsseln und die Verwendung der korrekten Datentypen (zum Beispiel für Date).
 
 Link:
 
-![ERD](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Bilder/Aufgabe6.bmp)
+![ERD](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Bilder/Aufgabe6_ERD.bmp)
 
 Schritt 4:
 
-![ERD](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Bilder/Aufgabe6.bmp)
+![ERD](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Bilder/Aufgabe6_ERD_Schritt4.bmp)
 
 
 **Aufgabe7**
@@ -30,7 +30,7 @@ Aufgabe a: Linien-Abfrage
 
 Die Abfrage soll fahrweg_id, linie, richtung, Fahrwegnummer (fw_no) und die Fahrwegbezeichnung (fw_lang) enthalten.
 
-
+[SQL Script Aufgabe 8](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe8.sql)
 
 
 Aufgabe: b Erstellen einer View
@@ -45,7 +45,7 @@ Erstellen Sie ein Skript mit einer Tabellenerstellungsabfrage create_line_table.
 
 Link:
 
-[SQL Script Aufgabe 8](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe8.sql)
+
 
 
 **Aufgabe9**
@@ -55,10 +55,11 @@ Es soll aus der fahrzeiten_soll_ist Tabelle eine vereinfachte Tabelle Ankunftsze
 
 A)
 
+[SQL Script Aufgabe 9a](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe9a.sql)
 
 B)
 
-[SQL Script Aufgabe 9a](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe9a.sql)
+
 
 **Aufgabe10**
 Verspätungsliste pro Linie
@@ -79,7 +80,16 @@ lat,lng,name,color,note 25.767368,-80.1893,Miami,#ff0000,Miami 34.088808,-118.40
 [SQL Script Aufgabe 11](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe11.sql)
 
 
+**Aufgabe12**
+Extrahieren Sie aus der Tabelle Ankunftszeiten die Soll-Abfahrtszeiten für eine Linie für einen bestimmten Tag. Die notwendigen Angaben sind in fahrt_id, datum und linie.
+Die Abfrage soll die Haltestellen und die Uhrzeit pro Linie sortiert nach fahrt_id und Uhrzeit (ohne Datum) anzeigen:
 
+[SQL Script Aufgabe 11](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe12.sql)
+
+
+**Aufgabe13**
+Wählen Sie eine GEO-Koordinate in Zürich. Ermitteln Sie eine Liste mit den 4 nächsten Stationen zu Ihrer Geokoordinate. Visualisieren Sie Ihren Standort und die 4 nächsten Stationen mit Hilfe von https://maps.co/gis/.
+Erstellen Sie eine Abfrage. Sie können die gewählte Geokoordinate direkt als Wert in der Abfrage verwenden.
 
 
 
