@@ -42,8 +42,6 @@ WHERE fsi.linie =2;
 
 
 
-
-
 ORDER BY delay DESC;
 
 CREATE TABLE to_map (
