@@ -1,52 +1,54 @@
-CREATE TABLE ankunftszeiten_a as(
-SELECT DISTINCT
+use vbzdat;
 
-fsi.id,
+CREATE TABLE ankunftszeiten
+
+SELECT
+
+fsi.halt_punkt_id_von as haltepunkt_id,
+fsi.fahrweg_id,fsi.fahrt_id,
+fsi.datumzeit_ist_an_von as datumzeit_ist_an,
+fsi.datumzeit_soll_an_von as datumzeit_soll_an,
+fsi.datumzeit_soll_ab_von as datumzeit_soll_ab,
+
+TIMESTAMPDIFF (SECOND, fsi.datumzeit_soll_an_von,fsi.datumzeit_ist_an_von) as delay
+
+from fahrzeiten_soll_ist fsi where fsi.linie = 2 and fsi.seq_von = 1 
+
+UNION 
+
+select fsi.halt_punkt_id_nach as haltepunkt_id,
+
+fsi.fahrweg_id,
 fsi.fahrt_id,
-haltepunkt.halt_punkt_id AS halt_punkt,
-linie.fahrweg_id,
-fsi.seq_von,
-fsi.seq_nach,
-fsi.datumzeit_ist_an_von,
-fsi.datumzeit_soll_an_von,
-fsi.datumzeit_soll_ab_von,
-TIMESTAMPDIFF(SECOND, datumzeit_soll_an_von,datumzzeit_ist_an_von)
-AS delay FROM fahrzeiten_soll_ist_ist fsi
-INNER JOIN haltepunkt ON
-haltepunkt.halt_punkt_id = fsi.halt_punkt_id_von
-INNER JOIN linie ON linie.fahrweg_id =
-fsi.fahrweg_id
+fsi.datumzeit_ist_an_nach as datumzeit_ist_an,
+fsi.datumzeit_soll_an_nach as datumzeit_soll_an,
+fsi.datumzeit_soll_ab_nach as datumzeit_soll_ab,
 
-WHERE fsi.seq_von = 1 AND fsi.linie = 3
+TIMESTAMPDIFF (SECOND, fsi.datumzeit_soll_an_nach, fis.datumzeit_ist_an_nach) as delay
 
-UNION DISTINCT
-SELECT DISTINCT fsi2.id,
-fsi2.fahrt_id,
-haltepunkt.halt_punkt_id AS halt_punkt,
-linie.fahrweg_id,
-fsi2.seq_von,
-fsi2.seq_nach,
-fsi.datumzeit_ist_an_von,
-fsi.datumzeit_soll_an_von,
-fsi.datumzeit_soll_ab_von,
+from fahrzeiten_soll_ist fsi 
 
-timestampdiff (SECOND, datumzeit_soll_an_von, datumzeit_ist_an_von) AS delay
-FROM fahrzeiten_soll_ist fsi2
-
-INNER JOIN haltepunkt ON
-
-haltepunkt.halt_punkt_id = fsi2.halt_punkt_id_nach
-
-INNER JOIN linie ON linie.fahrweg = fsi2.fahrweg_id
+where fsi.linie = 2;
 
 
-WHERE fsi2.linie = 2);
+alter table ankuftszeiten ADD id INT PRIMARY KEY auto_increment FIRST;
+alter table ankuftszeiten add constraint fk1 foreign key  (haltepunkt_id)
+references haltepunkt (halt_punkt_id);
+alter table ankuftszeiten add constraint fk2 foreign key (fahrweg_id) 
+references linie(fahrweg_id);
 
-ALTER TABLE ankuftszeiten_a ADD CONSTRAINT haltpunktfk FOREIGN KEY
-(halt_punkt) REFERENCES haltepunkt(halt_punkt_id);
 
-ALTER TABLE ankuftszeiten_a ADD CONSTRAINT haltpunktfk2 FOREIGN KEY
-(fahrwerk_id) REFERENCES linie(fahrwerk_id);
 
-ALTER TABLE ankuftszeiten_a ADD  art_pk_az int PRIMARY key
-auto_increment NOT null;
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,3 +1,5 @@
+use vbzdat;
+
 SELECT DISTINCT a.fahrt_id,
 hs.halt_lang,
 time(a.datumzeit_soll_ab_von) AS zeit

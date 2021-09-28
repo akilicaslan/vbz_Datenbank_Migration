@@ -1,4 +1,5 @@
-CREATE VIEW abfrage1 AS
+use vbzdat;
+
 SELECT
 
 fsi.id,
