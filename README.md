@@ -9,11 +9,11 @@ Bei der Bereinigung der Tabellen geht es um das Hinzufügen von Primärschlüsse
 
 Link:
 
-![ERD](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Bilder/Aufgabe6_ERD.bmp)
+[ERD View](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Bilder/Aufgabe6_ERD.bmp)
 
 Schritt 4:
 
-![ERD](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Bilder/Aufgabe6_ERD_Schritt4.bmp)
+[ERD](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Bilder/Aufgabe6_ERD_Schritt4.bmp)
 
 
 **Aufgabe7**
@@ -23,6 +23,10 @@ Erstellen Sie eine Abfrage, welche die Zeitdifferenzen anzeigt. Für die Zeitdif
 Link:
 
 [SQL Script Aufgabe 7](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe7.sql)
+
+[linie2_aufgabe7](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Bilder/linie2_aufgabe7.jpg)
+
+
 
 **Aufgabe8**
 
@@ -86,7 +90,7 @@ lat,lng,name,color,note 25.767368,-80.1893,Miami,#ff0000,Miami 34.088808,-118.40
 Extrahieren Sie aus der Tabelle Ankunftszeiten die Soll-Abfahrtszeiten für eine Linie für einen bestimmten Tag. Die notwendigen Angaben sind in fahrt_id, datum und linie.
 Die Abfrage soll die Haltestellen und die Uhrzeit pro Linie sortiert nach fahrt_id und Uhrzeit (ohne Datum) anzeigen:
 
-[SQL Script Aufgabe 11](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe12.sql)
+[SQL Script Aufgabe 12](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe12.sql)
 
 
 **Aufgabe13**
@@ -94,8 +98,13 @@ Wählen Sie eine GEO-Koordinate in Zürich. Ermitteln Sie eine Liste mit den 4 n
 Erstellen Sie eine Abfrage. Sie können die gewählte Geokoordinate direkt als Wert in der Abfrage verwenden.
 
 
+[SQL Script Aufgabe 13](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe13.sql)
 
 
+**Aufgabe14**
+Wählen Sie eine GEO-Koordinate in Zürich. Ermitteln Sie eine Liste mit den 4 nächsten Stationen zu Ihrer Geokoordinate. Visualisieren Sie Ihren Standort und die 4 nächsten Stationen mit Hilfe von https://maps.co/gis/.
+Erstellen Sie eine Abfrage. Sie können die gewählte Geokoordinate direkt als Wert in der Abfrage verwenden.
 
 
+[SQL Script Aufgabe 14](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe14.sql)
 
