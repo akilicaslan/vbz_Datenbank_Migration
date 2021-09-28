@@ -18,7 +18,7 @@ Schritt 4:
 
 **Aufgabe7**
 
-Erstellen Sie eine Abfrage, welche die Zeitdifferenzen anzeigt. Für die Zeitdifferenzen sollen nur die von-Zeiten betrachtet werden.
+Erstellen Sie eine Abfrage, welche die Zeitdifferenzen anzeigt. Für die Zeitdifferenzen sollen nur die von-Zeiten betrachtet werden. Für die Linie 2 und Datum 26.12.2020 und der Fahrt ID 700
 
 Link:
 
@@ -34,6 +34,8 @@ Die Abfrage soll fahrweg_id, linie, richtung, Fahrwegnummer (fw_no) und die Fahr
 
 
 Aufgabe: b Erstellen einer View
+
+[View query_view](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe8.sql)
 
 
 
