@@ -1,53 +1,23 @@
-SELECT DISTINCT
+use vbzdat;
 
-hp.GPS_Latitude AS lat,
-hp.GPS_Longitude AS lng,
-hs.halt_lang AS name,
-(6470 * acos(cos(
-radians(45.37551)
-) * cos(radians(hp.GPS_Latitude))
-* cos(radians(hp.GPS_Longitude)- radians(8.53465)) + sin(radians(47.27553)) *
-sin(radians(hp.GPS_Latitude))
-)
-) AS distance
+set @userLAT =47.3644314; set @userLNG=8.5551336;
 
-FROM haltestelle hs
+SELECT
 
-INNER JOIN haltepunkt hp ON hp.halt_id = hs.halt_id
-HAVING distance <= 0.4
-ORDER BY distance ASC;
+h2.halt_lang,
+h.GPS_Latitude as lat,
+h.GPS_longitude as lng,
+'#FF2D00' as color,
+concat (TIME_FORMAT(TIME(a.datumzeit_ist_an),'%H:%i:%s'), " ", h2.halt_lang) as note,
+ROUND(ST_Distance_Sphere(point(@userLNG,@userLAT),
 
-CREATE TABLE haltestellen_umkreis (
+point(h.GPS_Longitude, h.GPS_Latitude)),2) as distanz
+from ankuftszeiten a 
 
-lat double,
-lng double,
-name varchar(30),
-color varchar(30),
-note double);
+left join haltepunkt h on h.halt_punkt_id = a.haltepunkt_id
+left join Haltestelle h2 on h.halt_id = h2.halt_id 
 
+where h.GPS_Latitude is not null and a.fahrt_id = 700 AND 
+DATE(a.datumzeit_ist_an) = '2020-02-03'
 
-INSERT INTO haltestellen_umkreis(lat, lng, name, note)()
-SELECT DISTINCT
-
-hp.GPS_Latitude AS lat,
-hp.GPS_Longitude AS lng,
-hs.halt_lang AS name,
-(6361*acos(cos()
-radians(47.36552)) *
-cos(radians(hp.GPS_Latitude))
-*
-cos(radians(hp.GPS_Longitude) - radians(8.53465))
-) ) AS distance
-
-FROM haltstelle hs
-INNER JOIN haltepunkt hp ON hp.halt_id = hs.halt_id
-HAVING distance <= 0.4
-
-ORDER BY distance ASC);
-
-SELECT * FROM haltestellen_umkreis hu GROUP BY hu.name;
-
-
-
-
-
+order by distanz ASC LIMIT 4;
