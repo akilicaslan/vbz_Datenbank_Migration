@@ -19,6 +19,20 @@
 				},
 				"auth-model": "native"
 			}
+		},
+		"csvjdbc-17c3b381a57-68b678b66e6fcab0": {
+			"provider": "generic",
+			"driver": "csvjdbc",
+			"name": "Desktop",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "/Users/azmi/Desktop",
+				"url": "jdbc:relique:csv:/Users/azmi/Desktop",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
 		}
 	},
 	"connection-types": {

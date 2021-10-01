@@ -1,45 +1,34 @@
-use  vbzdat;
+use vbzdat;
 
-CREATE  TABLE  ankunftszeiten
-SELECT  fsi.halt_punkt_id_von       as  haltepunkt_id,
-fsi.fahrweg_id,    fsi.fahrt_id,
-fsi.datumzeit_ist_an_von      as  datumzeit_ist_an,
-fsi.datumzeit_soll_an_von      as   datumzeit_soll_an,
-fsi.datumzeit_soll_ab_von      as   datumzeit_soll_ab,
-TIMESTAMPDIFF   (SECOND,    fsi.datumzeit_soll_an_von,
-fsi.datumzeit_ist_an_von)      as   delay
-FROM  fahrzeiten_soll_ist     fsi
-WHERE  fsi.linie   = 2  AND fsi.seq_von      = 1
+create table ankunftszeiten
 
-UNION
-
-SELECT  fsi.halt_punkt_id_nach       as   haltepunkt_id,
-fsi.fahrweg_id,    fsi.fahrt_id,
-fsi.datumzeit_ist_an_nach      as   datumzeit_ist_an,
-fsi.datumzeit_soll_an_nach       as  datumzeit_soll_an,
-fsi.datumzeit_soll_ab_nach       as  datumzeit_soll_ab,
-TIMESTAMPDIFF   (SECOND,    fsi.datumzeit_soll_an_nach,
-fsi.datumzeit_ist_an_nach)       as  delay
-FROM  fahrzeiten_soll_ist     fsi
-WHERE  fsi.linie   = 5;
-
-ALTER  TABLE  ankunftszeiten     ADD   id INT  PRIMARY   KEY  auto_increment
-FIRST;
-ALTER  TABLE  ankunftszeiten     ADD   CONSTRAINT   fk1  FOREIGN  KEY
-(haltepunkt_id)    REFERENCES    haltepunkt(halt_punkt_id);
-ALTER  TABLE  ankunftszeiten     ADD   CONSTRAINT   fk2  FOREIGN  KEY
-(fahrweg_id)   REFERENCES   linie(fahrweg_id);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+select
+	
+	fsi.halt_punkt_id_von as haltepunkt_ID,
+	fsi.fahrweg_id, 
+    fsi.datumzeit_ist_an_von ,
+    fsi.datumzeit_soll_an_von ,
+    fsi.datumzeit_soll_ab_von, 
+    fsi.seq_von,
+     fsi.seq_nach,
+    Timestampdiff (second, datumzeit_soll_an_von,datumzeit_ist_an_von) as delay
+from
+    vbzdat.fahrzeiten_soll_ist fsi
+   where fsi.linie =2 and fsi.seq_von =1
+   
+   union 
+   
+   select
+	
+	fsi.halt_punkt_id_nach as haltepunkt_ID,
+	fsi.fahrweg_id, 
+    fsi.datumzeit_ist_an_nach ,
+    fsi.datumzeit_soll_an_nach ,
+    fsi.datumzeit_soll_ab_nach, 
+    fsi.seq_von,
+     fsi.seq_nach,
+    Timestampdiff (second, datumzeit_soll_an_nach,datumzeit_ist_an_nach) as delay
+from
+    vbzdat.fahrzeiten_soll_ist fsi
+   where fsi.linie =2 ;
+   

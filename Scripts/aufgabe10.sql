@@ -1,6 +1,7 @@
 use vbzdat;
 
 SELECT 
+
 a.id,
 a.haltepunkt_id,
 h.GPS_Latitude,
@@ -25,7 +26,8 @@ order by delay desc LIMIT 20;
 
 
 create table verspaetungen_20
-select 
+
+SELECT
 
 h.GPS_Latitude as lat,
 h.GPS_Longitude as lng,

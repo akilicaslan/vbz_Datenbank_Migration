@@ -100,11 +100,3 @@ Erstellen Sie eine Abfrage. Sie können die gewählte Geokoordinate direkt als W
 
 [SQL Script Aufgabe 13](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe13.sql)
 
-
-**Aufgabe14**
-Wählen Sie eine GEO-Koordinate in Zürich. Ermitteln Sie eine Liste mit den 4 nächsten Stationen zu Ihrer Geokoordinate. Visualisieren Sie Ihren Standort und die 4 nächsten Stationen mit Hilfe von https://maps.co/gis/.
-Erstellen Sie eine Abfrage. Sie können die gewählte Geokoordinate direkt als Wert in der Abfrage verwenden.
-
-
-[SQL Script Aufgabe 14](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe14.sql)
-
