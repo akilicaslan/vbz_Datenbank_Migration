@@ -1,66 +1,37 @@
 use vbzdat;
 
-SELECT
-
-fsi.id,
-hp.halt_punkt_id,
-hs.halt_lang,
-hp.gps_latitude,
-hp.gps_longitude,
-fsi.fahrwerk_id,
-fsi.linie,
-fsi.datumzeit_ist_an_von AS datumzeit_ist_an,
-fsi.datumzeit_soll_an_von AS datumzeit_soll_an,
-TIMESTAMPDIFF(SECOND, fsi.datumzeit_soll_an_von, fsi.datumzeit_ist_an_von) AS delay
-FROM fahrzeiten_soll_ist fsi
-
-INNER JOIN haltepunkt hp ON hp.halt_punkt_id = fsi.halt_punkt_id_von
-INNER JOIN linie l ON l.fahrweg_id= fsi.fahrwerg_id
-INNER JOIN haltestelle hs ON hs.halt_id = fsi.halt_id_von
-
-WHERE fsi.linie = 2
-ORDER BY delay DESC;
-
-CREATE VIEW abfrage2 AS
-SELECT
-fsi.id,
-hp.halt_punkt_id,
-hs.halt_lang,
-hp.gps_latitude,
-hp.gps_longitude,
-fsi.linie,
-fsi.datumzeit_ist_an_von AS datumzeit_ist_an,
-fsi.datumzeit_soll_an_von AS datumzeit_soll_an,
-TIMESTAMPDIFF(SECOND, fsi.datumzeit_soll_an_von,fsi.datumzeit_ist_an_von) AS delay
-
-FROM fahrzeiten_soll_ist fsi
-
-INNER JOIN haltepunkt hp ON hp.halt_punkt_id = fsi.halt_punkt_id_von
-INNER JOIN linie l ON l.fahrweg_id = fsi.fahrweg_id
-INNER JOIN haltestelle hs ON hs.halt_id = fsi.halt_id_von
-
-WHERE fsi.linie =2;
-
-
-
-ORDER BY delay DESC;
-
-CREATE TABLE to_map (
-
-lat double,
-lng double,
-name varchar(100),
-color varchar(100),
-note int);
-
-
-INSERT INTO to_map ( lat,lng,name,note)
 SELECT 
-a.gps_latitude,
-a.gps_longitude,
-a.halt_lang,
-a.delay FROM (SELECT * FROM abfrage) a;
-SELECT * FROM to_map ORDER BY note DESC;
+a.id
+a.haltepunkt_id,
+h.GPS_Latitude,
+h.GPS_Longitude,
+h2.halt_lang,
+a.fahrweg_id,
+l.linie,
+a.datumzeit_soll_an,
+a.datumzeit_ist_an,
+a.delay
 
+from ankunftszeiten a 
 
+left join haltepunkt h ON h.halt_punkt_id = a.haltepunkt_id
+left join haltestelle h2  ON h2.halt_id = h.halt_id
+left join linie l  ON a.fahrweg_id = l.fahrweg_id
 
+order by delay desc LIMIT 20; ##für den Limit von 20
+
+create table verspaetungen_20
+select 
+
+h.GPS_Latitude as lat,
+h.GPS_Longitude as lng,
+h2.halt_lang as name,
+'#FF2D00' as color,
+
+CONCAT(a.delay,"Haltestelle: ", h2.halt_lang) as note 
+
+from ankunftszeiten a 
+left join haltepunkt h ON h.halt_punkt_id = a.haltepunkt_id
+left join haltestelle h2  ON h2.halt_id = h.halt_id
+left join linie l  ON a.fahrweg_id = l.fahrweg_id
+order by delay desc LIMIT 20;

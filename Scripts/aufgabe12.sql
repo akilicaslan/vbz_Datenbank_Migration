@@ -1,14 +1,13 @@
 use vbzdat;
 
-SELECT DISTINCT a.fahrt_id,
-hs.halt_lang,
-time(a.datumzeit_soll_ab_von) AS zeit
+SELECT 
 
-FROM ankuftszeiten_a a
 
-INNER JOIN linie l ON a.fahrweg_id = l.fahrweg_id
-INNER JOIN haltepunkt hp ON hp.halt_punkt_id = a.halt_punkt
-INNER JOIN haltestelle hs ON hs.halt_id = hp.halt_id
+a.fahrt_id as fahrt,
+h2.halt_lang as haltestelle,
 
-WHERE date(a.datumzeit_soll_ab_von) '2020-02-02' AND l.linie = 2
-ORDER BY a.fahrt_id AND zeit;
+Time_format(TIME(a.datumzeit_soll_ab), '%H:%i:%s') as abfahrtzeit
+
+from ankunftszeiten a 
+
+left join linie l on l.fahrweg_id = a.fahrweg_id
