@@ -1,7 +1,7 @@
 use vbzdat;
 
 SELECT 
-a.id
+a.id,
 a.haltepunkt_id,
 h.GPS_Latitude,
 h.GPS_Longitude,
@@ -12,13 +12,17 @@ a.datumzeit_soll_an,
 a.datumzeit_ist_an,
 a.delay
 
-from ankunftszeiten a 
+from ankunftszeiten a
 
 left join haltepunkt h ON h.halt_punkt_id = a.haltepunkt_id
 left join haltestelle h2  ON h2.halt_id = h.halt_id
 left join linie l  ON a.fahrweg_id = l.fahrweg_id
 
-order by delay desc LIMIT 20; ##für den Limit von 20
+
+##für den Limit von 20
+order by delay desc LIMIT 20; 
+
+
 
 create table verspaetungen_20
 select 
@@ -35,3 +39,10 @@ left join haltepunkt h ON h.halt_punkt_id = a.haltepunkt_id
 left join haltestelle h2  ON h2.halt_id = h.halt_id
 left join linie l  ON a.fahrweg_id = l.fahrweg_id
 order by delay desc LIMIT 20;
+
+
+
+
+
+
+
