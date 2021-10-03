@@ -100,3 +100,20 @@ Erstellen Sie eine Abfrage. Sie können die gewählte Geokoordinate direkt als W
 
 [SQL Script Aufgabe 13](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe13.sql)
 
+
+**Aufgabe14**
+
+Berechnen Sie für eine Linie die Distanz zwischen 2 Haltestellen. Sortieren Sie die Abfrage aufsteigend nach Distanz.
+
+
+[SQL Script Aufgabe 14](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe14.sql)
+
+
+[tabelle aufgabe14](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Bilder/aufgabe14.jpg)
+
+
+
+
+
+
+
