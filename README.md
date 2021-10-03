@@ -67,12 +67,20 @@ B)
 
 [erd ankunftszeiten](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Bilder/aufgabe9_ankunftszeiten_erd.png)
 
+
+[SQL Script Aufgabe 09](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe9a.sql)
+
 **Aufgabe10**
 Verspätungsliste pro Linie
 
 Ermitteln Sie für eine Line (zum Beispiel Linie 9) eine Liste mit den 20 grössten Verspätungen. Die Liste (Abfrage) soll folgende Angaben enthalten:
 
 [verspaetungen](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Bilder/aufgabe10.png)
+
+[verspaetungen_tabelle](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Bilder/verspaetung_20.jpg)
+
+
+[SQL Script Aufgabe 10](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe10.sql)
 
 
 **Aufgabe11**
