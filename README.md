@@ -61,18 +61,18 @@ Es soll aus der fahrzeiten_soll_ist Tabelle eine vereinfachte Tabelle Ankunftsze
 
 A)
 
-[SQL Script Aufgabe 9a](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe9a.sql)
+[table ankunftszeiten](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Bilder/aufgabe9_ankunftszeiten.jpg)
 
 B)
 
-
+[erd ankunftszeiten](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Bilder/aufgabe9_ankunftszeiten_erd.png)
 
 **Aufgabe10**
 Verspätungsliste pro Linie
 
 Ermitteln Sie für eine Line (zum Beispiel Linie 9) eine Liste mit den 20 grössten Verspätungen. Die Liste (Abfrage) soll folgende Angaben enthalten:
 
-[SQL Script Aufgabe 10](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Scripts/aufgabe10.sql)
+[verspaetungen](https://github.com/akilicaslan/vbz_Datenbank_Migration/tree/main/Bilder/aufgabe10.png)
 
 
 **Aufgabe11**
